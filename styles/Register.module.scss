@@ -6,13 +6,22 @@
     justify-content: center;
     background-image: linear-gradient(to right, #8e2de2, #4a00e0);
 
+    @media screen and (max-width: 500px) {
+        height: 100% !important;
+    }
+
     .content {
         padding: 3rem 4rem;
-        background: white;
+        background: rgba(255, 255, 255, 0.849);
         border-radius: 1rem;
 
+        @media screen and (max-width: 500px) {
+            width: 100%;
+            border-radius: 0 !important;
+        }
+
         h1 {
-            font-weight: 300;
+            font-weight: 500;
             padding: 0rem 1rem 1rem 0;
             font-size: 3rem;
             line-height: 3.5rem;
