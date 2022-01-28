@@ -33,37 +33,12 @@ export default function Creator() {
         })
         console.log(inputData)
     }
-    // JSX create according it
-
-    const inputsWriteJSX = [
-        {
-            title: "title",
-            small: "title must be small and attractive and maximum 5 letter long",
-            placeholder: 'your blog title',
-            inputFeild: 'input',
-            onChange: OnChangeHandler,
-        },
-        {
-            title: "discription",
-            small: "title must be small and attractive and maximum 5 letter long",
-            placeholder: 'your blog Discription',
-            inputFeild: 'input',
-            onChange: OnChangeHandler,
-        },
-        {
-            title: "content",
-            small: "title must be small and attractive and maximum 5 letter long",
-            placeholder: null,
-            inputFeild: 'textarea',
-            onChange: OnChangeHandler,
-        }
-    ]
 
     return (
         <div className={cls.wrapper}>
 
             <div className={cls.experimental}>
-                {/* <label className={cls.label}>
+                <label className={cls.label}>
                     <h1>Title</h1>
                     <small>Title must be small and attractive and maximum 5 letter long.</small>
                     <input name="title" onChange={OnChangeHandler} placeholder="Your blog title" type="text" required />
@@ -78,7 +53,7 @@ export default function Creator() {
                     <h1>Content</h1>
                     <small>Your blog content</small>
                     <textarea name="content" onChange={OnChangeHandler} required></textarea>
-                </label> */}
+                </label>
                 <button className={cls.submitButton} onClick={validateInputs}>submit</button>
             </div>
         </div>
