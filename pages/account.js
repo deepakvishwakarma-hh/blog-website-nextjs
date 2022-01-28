@@ -5,10 +5,8 @@ import Header from "../components/header/Header"
 import cls from '../styles/account.module.scss'
 import { collection, getDocs } from "firebase/firestore"
 import MiniBlog from "../components/mini-blog/MiniBlog"
-
 const userData = ls.get('token', { decrypt: true })
 export default function account({ data }) {
-    const validateUser = Validate()
     const userCreatedBlogs = data.filter(v => v.author == userData?.name).map((v, i) => { return <MiniBlog key={v + i} obj={v} /> })
     const logoutHandler = () => {
         const userOpenion = confirm("do you really want to logout")

@@ -26,16 +26,17 @@
 }
 
 .DemoAlert {
-    // position: fixed;
     padding: 1rem;
     width: 100%;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    // flex-direction: column;
     background-image: linear-gradient(to right, #8e2de2, #4a00e0);
 
+    @media screen and (max-width : 600px) {
+        flex-direction: column !important;
+    }
 
     h1 {
         padding: .5rem 0;
