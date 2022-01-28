@@ -13,6 +13,10 @@ $submitButton_color: rgb(255, 255, 255);
         padding: 2rem 0rem 0 0rem;
         margin: 1rem;
 
+        @media screen and (max-width :600px) {
+            width: 90%;
+        }
+
         h1 {
             padding: 0rem;
             font-size: 1.2rem;
@@ -39,9 +43,23 @@ $submitButton_color: rgb(255, 255, 255);
             border: none;
             margin-top: 1rem;
             background: $textarea_bg;
+
+            @media screen and (max-width :600px) {
+                width: 95%;
+                min-height: 10rem;
+            }
         }
 
     }
+
+}
+
+
+
+.footer {
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column-reverse;
 
     .submitButton {
         float: right;
@@ -52,5 +70,4 @@ $submitButton_color: rgb(255, 255, 255);
         color: $submitButton_color;
         border-radius: .5rem;
     }
-
 }

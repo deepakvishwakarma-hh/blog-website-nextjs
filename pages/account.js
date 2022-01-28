@@ -5,27 +5,35 @@ import Header from "../components/header/Header"
 import cls from '../styles/account.module.scss'
 import { collection, getDocs } from "firebase/firestore"
 import MiniBlog from "../components/mini-blog/MiniBlog"
+import { useRouter } from "next/router"
 
 const userData = ls.get('token', { decrypt: true })
 export default function account({ data }) {
+    const router = useRouter()
     const validateUser = Validate()
     const userCreatedBlogs = data.filter(v => v.author == userData?.name).map((v, i) => { return <MiniBlog key={v + i} obj={v} /> })
+    const logoutHandler = () => {
+        const userOpenion = confirm("do you really want to logout")
+        if (userOpenion) {
+            ls.remove('token')
+            ls.remove('DemoToken')
+            router.push('/login')
+        }
+    }
     return <>
         <Header />
         <div>
             <div className={cls.user_wrap}>
-                <h1>@{userData?.name ?? 'Demo Logger'}</h1>
-                <h3>{userData?.email ?? 'fake@email'}</h3>
+
+                <h1>@{userData?.name ?? 'Demo Logger'} <br />
+                    <h3> {userData?.email ?? 'fake@email'}</h3>
+                </h1>
+                <button onClick={logoutHandler} className={cls.logoutButton}>Logout</button>
+
             </div>
+
             <h1 className={cls.basictext}>My Creations</h1>
             <div className={cls.blogs}>
-                {/* {
-                    data.filter(v => v.author == userData?.name).map((v, i) => {
-                        return (
-                            <MiniBlog key={v + i} obj={v} />
-                        )
-                    })
-                } */}
                 {userCreatedBlogs}
             </div>
         </div>

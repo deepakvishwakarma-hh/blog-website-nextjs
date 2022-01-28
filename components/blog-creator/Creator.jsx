@@ -34,6 +34,11 @@ export default function Creator() {
         console.log(inputData)
     }
 
+    // specially design to prevent blog-creation condition not loged in
+    const submitButtonFunctionality = <button style={{ opacity: (ls.get('token') !== null) ? 1 : 0 }} className={cls.submitButton} onClick={validateInputs}>submit</button>
+
+    // warning - condition(user is not logged  in)
+    const warningUserNotPrimaryLogin = <span className={cls.alert}>{(ls.get('token') !== null) ? null : "you specially need to login with  id password to create mini blog post"}</span>
     return (
         <div className={cls.wrapper}>
 
@@ -54,7 +59,11 @@ export default function Creator() {
                     <small>Your blog content</small>
                     <textarea name="content" onChange={OnChangeHandler} required></textarea>
                 </label>
-                <button className={cls.submitButton} onClick={validateInputs}>submit</button>
+
+            </div>
+            <div className={cls.footer}>
+                {submitButtonFunctionality}
+                {warningUserNotPrimaryLogin}
             </div>
         </div>
     )

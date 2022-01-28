@@ -2,18 +2,15 @@ import dynamic from 'next/dynamic'
 import { collection, getDocs } from "firebase/firestore";
 import db from "../firebase.config";
 import Validate from '../hooks/Validate';
-import ls from 'localstorage-slim'
-import { LoginBox, DemoAlert } from '../components/micros/Micro';
+// import Aleart from '../components/primary-login-alert/Aleart';
 const Header = dynamic(() => import('../components/header/Header'))
 const Main = dynamic(() => import('../components/main/Main'))
 export default function Home({ data }) {
   const validateUser = Validate()
-  const token = ls.get('token')
-  const demo = ls.get('DemoLogin')
+
   return (
     <>
-      {(token) ? null : <LoginBox />}
-      {(!demo) ? null : <DemoAlert />}
+      {/* <Aleart /> */}
       <Header />
       <Main data={data} />
     </>
