@@ -1,0 +1,58 @@
+.LoginBox {
+    color: white;
+    padding: .5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    background: #000;
+
+    h1 {
+        padding: 1rem;
+        font-family: 'Quicksand', sans-serif !important;
+        font-size: .9rem;
+    }
+
+    button {
+        padding: .5rem 2rem;
+        border-radius: .3rem;
+        border: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: white;
+        font-family: 'Quicksand', sans-serif !important;
+
+    }
+}
+
+.DemoAlert {
+    // position: fixed;
+    padding: 1rem;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // flex-direction: column;
+    background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+
+
+    h1 {
+        padding: .5rem 0;
+        font-size: 1rem;
+    }
+
+
+    b {
+        color: rgb(0, 225, 255)
+    }
+
+    button {
+        padding: .5rem 3rem;
+        margin-left: 2rem;
+        justify-self: flex-end;
+        background: none;
+        border: white 1px solid;
+        color: white;
+    }
+}

@@ -1,0 +1,46 @@
+.wrapper {
+    max-width: fit-content;
+    min-width: 300px;
+    min-height: 200px;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px rgba(128, 128, 128, 0.089) solid;
+    padding: .4rem;
+
+    @media screen and (max-width : 700px) {
+        max-width: 700px;
+    }
+
+    &:hover {
+        border: 1px rgb(128, 128, 128) solid;
+        transition: all .3s ease-in-out;
+    }
+
+    h1 {
+        text-transform: capitalize;
+        padding: 1rem 1rem;
+        font-size: 1.5rem;
+        color: rgb(62, 13, 82);
+        font-family: 'Quicksand', sans-serif !important;
+    }
+
+    p {
+        padding: 0 1rem;
+        color: rgba(0, 0, 0, 0.493);
+        font-weight: 500;
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+
+    button {
+        margin: 1rem;
+        padding: .5rem 1rem;
+        background: none;
+        text-transform: capitalize;
+        border-radius: .3rem;
+        border: rgba(0, 0, 0, 0.671) 2px solid;
+    }
+}

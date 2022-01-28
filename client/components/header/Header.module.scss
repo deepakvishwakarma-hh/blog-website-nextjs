@@ -1,0 +1,49 @@
+.header {
+    height: 100px;
+
+    @media screen and (max-width : 700px) {
+        height: fit-content;
+        padding: 1rem 0;
+    }
+
+    .nav {
+        display: grid;
+        grid: 100px / 60% auto auto auto;
+        align-items: center;
+        padding: 0 2rem;
+
+        @media screen and (max-width : 700px) {
+            grid: auto auto auto auto /auto;
+        }
+
+        h1 {
+            letter-spacing: .1px;
+            font-size: 2rem;
+
+            sub {
+                font-size: .7rem;
+            }
+
+        }
+
+        button {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            padding: .5rem 0;
+            text-transform: capitalize;
+            font-weight: 600;
+            color: rgb(128, 128, 128);
+            border: 1px rgba(128, 128, 128, 0.253) solid;
+            font-family: 'Quicksand', sans-serif !important;
+
+            @media screen and (max-width : 700px) {
+                background: none;
+                color: black;
+                margin-top: 1rem;
+                border: none;
+                justify-self: flex-end;
+            }
+        }
+    }
+}

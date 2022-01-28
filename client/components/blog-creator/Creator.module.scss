@@ -1,0 +1,56 @@
+$input_border : 1px grey solid;
+$input_border_onFocus : 1px blue solid;
+$textarea_bg : rgba(128, 128, 128, 0.137);
+$submitButton_bg: black;
+$submitButton_color: rgb(255, 255, 255);
+
+.experimental {
+    padding: 2rem;
+
+    .label {
+        display: inline-block;
+        width: 40%;
+        padding: 2rem 0rem 0 0rem;
+        margin: 1rem;
+
+        h1 {
+            padding: 0rem;
+            font-size: 1.2rem;
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            padding-bottom: .5rem;
+            border-bottom: $input_border;
+            margin: 1rem 0;
+            outline: none;
+
+            &:focus {
+                outline: none;
+                border-bottom: $input_border_onFocus;
+            }
+        }
+
+        textarea {
+            width: auto;
+            display: block;
+            transition: all .3s ease-in-out;
+            border: none;
+            margin-top: 1rem;
+            background: $textarea_bg;
+        }
+
+    }
+
+    .submitButton {
+        float: right;
+        padding: .8rem 5rem;
+        margin: 1rem .5rem 0 0;
+        background: $submitButton_bg;
+        border: none;
+        color: $submitButton_color;
+        border-radius: .5rem;
+    }
+
+}

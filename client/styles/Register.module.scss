@@ -1,0 +1,74 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+
+    .content {
+        padding: 3rem 4rem;
+        background: white;
+        border-radius: 1rem;
+
+        h1 {
+            font-weight: 300;
+            padding: 0rem 1rem 1rem 0;
+            font-size: 3rem;
+            line-height: 3.5rem;
+        }
+
+        p {
+            padding: 0 0 .5rem 0;
+            display: inline-block;
+            color: grey;
+
+        }
+
+        a {
+            color: #4796FF;
+            display: inline;
+            padding: 0 .2rem;
+            text-transform: capitalize;
+            text-decoration: underline 2px #4796FF;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin: 1rem 0;
+            padding: .8rem .5rem;
+            border-radius: .5rem;
+            background: none;
+            border: 2px black solid;
+        }
+
+        section {
+            input {
+                display: block;
+                width: 100%;
+                padding: .5rem .2rem;
+                margin: .5rem 0;
+                border: none;
+                border-bottom: rgba(128, 128, 128, 0.123) solid 2px;
+
+                &::placeholder {
+                    color: rgba(128, 128, 128, 0.747);
+                    padding: 0 0 0 .2rem;
+                }
+
+                &:focus {
+                    border: none;
+                    border-bottom: 2px #4796FF solid !important;
+                }
+            }
+
+            button {
+                background: #000;
+                color: white;
+            }
+
+
+        }
+    }
+}

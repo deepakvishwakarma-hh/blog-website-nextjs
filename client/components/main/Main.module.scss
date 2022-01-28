@@ -1,0 +1,79 @@
+.main {
+    display: grid;
+
+    .floatingButton {
+        position: fixed;
+        padding: 1rem;
+        border-radius: 50%;
+        right: 2rem;
+        bottom: 2rem;
+        color: white;
+        font-size: 1rem;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(0, 0, 0, 0.562);
+    }
+
+    .content {
+        background: rgb(255, 255, 255);
+        display: flex;
+        flex-wrap: wrap;
+        padding: 3rem 2rem;
+    }
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    div {
+        h1 {
+            padding: 2rem 1rem;
+            font-size: 2rem;
+            text-transform: capitalize;
+        }
+
+        input {
+            width: 300px;
+            height: 50px;
+            border: rgba(0, 0, 0, 0.096) solid 2px;
+            border-radius: .1rem;
+            // text-align: center;
+            padding: 1rem;
+            margin-left: 1rem;
+
+        }
+    }
+}
+
+
+
+
+.blogWrapper {
+    padding: 3rem;
+
+    .title {
+        color: rgb(65, 65, 65);
+        padding: .5rem 0;
+        font-size: 2rem;
+    }
+
+    .discription {
+        padding: .2rem 0 !important;
+        font-weight: 400;
+        font-size: 1rem;
+        border-bottom: 1px rgba(128, 128, 128, 0.397) solid;
+    }
+
+    .contents {
+        padding: 1rem 0;
+        line-height: 1.5rem;
+    }
+
+    .author {
+        color: rgb(70, 70, 70);
+    }
+}
