@@ -5,11 +5,9 @@ import Header from "../components/header/Header"
 import cls from '../styles/account.module.scss'
 import { collection, getDocs } from "firebase/firestore"
 import MiniBlog from "../components/mini-blog/MiniBlog"
-import { useRouter } from "next/router"
 
 const userData = ls.get('token', { decrypt: true })
 export default function account({ data }) {
-    const router = useRouter()
     const validateUser = Validate()
     const userCreatedBlogs = data.filter(v => v.author == userData?.name).map((v, i) => { return <MiniBlog key={v + i} obj={v} /> })
     const logoutHandler = () => {
@@ -17,7 +15,6 @@ export default function account({ data }) {
         if (userOpenion) {
             ls.remove('token')
             ls.remove('DemoToken')
-            router.push('/login')
         }
     }
     return <>

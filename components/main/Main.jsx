@@ -23,7 +23,7 @@ export default function Main({ data }) {
     return (
         <main className={classes.main}>
             <button tooltip="create mini blog" className={classes.floatingButton}>
-                <Image src="/pencil.svg" width="30" height="30" />
+                <Image src="/pencil.svg" width="30" height="30" alt='none' />
             </button>
             <aside className={classes.aside}>
                 <Search onChange={onChangeHandlerForSearch} />
