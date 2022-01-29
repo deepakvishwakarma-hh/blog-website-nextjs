@@ -24,7 +24,6 @@ export default function account({ data }) {
                     <h3> {userData?.email ?? 'fake@email'}</h3>
                 </h1>
                 <button onClick={logoutHandler} className={cls.logoutButton}>Logout</button>
-
             </div>
 
             <h1 className={cls.basictext}>My Creations</h1>
