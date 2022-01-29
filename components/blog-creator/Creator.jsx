@@ -2,9 +2,9 @@ import { useState } from 'react';
 import ls from 'localstorage-slim';
 import cls from './Creator.module.scss';
 import db from "../../firebase.config";
-import { collection, addDoc, } from "firebase/firestore";
 import Loader from '../loaders/Loader'
 import { useRouter } from 'next/router'
+import { collection, addDoc, } from "firebase/firestore";
 
 export default function Creator() {
     // setting router hook

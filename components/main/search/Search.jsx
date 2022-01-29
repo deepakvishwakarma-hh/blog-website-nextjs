@@ -1,5 +1,4 @@
 import classes from "../Main.module.scss"
-
 export default function Search({ onChange }) {
     return (
         <div className={classes.search}>

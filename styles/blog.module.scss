@@ -1,5 +1,6 @@
 // Work on it Make it responsible for all devieces and more ascessible
 
+
 .header {
     display: flex;
     flex-direction: column;
@@ -9,11 +10,15 @@
         padding: 2rem 2rem 1rem 2rem;
     }
 
+    .author {
+        color: blue;
+    }
+
     .date {
         font-family: monospace !important;
-        font-size: 1rem;
+        font-size: .7rem;
         color: grey;
-        padding: 1rem 0;
+        padding: .5rem 0;
     }
 
     .title {
@@ -30,8 +35,11 @@
         font-size: 1rem !important;
         padding: 1rem 0;
         line-height: 1.8rem;
-        opacity: .5;
-        color: rgb(17, 0, 255);
+        color: rgba(0, 0, 0, 0.658);
+        display: inline-block;
+        border: 1px rgba(0, 0, 0, 0.034) solid;
+        border-left: none;
+        border-right: none;
 
         &::first-letter {
             text-transform: capitalize;
@@ -64,9 +72,18 @@
     width: 100%;
     margin: 2rem 0 0 0;
     display: grid;
-    grid: auto / auto auto;
+    grid: auto auto/ auto;
     align-items: center;
     justify-content: center;
+
+    h3 {
+        padding: 2rem;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-top: 2rem;
+        border-top: 1px rgba(128, 128, 128, 0.466) solid;
+
+    }
 
     .authorBlogs {
         display: flex;
@@ -77,8 +94,20 @@
         flex-wrap: wrap;
     }
 
-    @media screen and (max-width : 933px) {
-        grid: auto auto/ auto;
+    .reference {
+        padding: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-top: 2px grey solid;
+        cursor: pointer;
+
+        small {
+            font-size: .8rem;
+            font-weight: 500;
+            color: grey;
+            text-transform: capitalize;
+            margin-left: 1rem;
+        }
     }
 
     @media screen and (max-width : 400px) {

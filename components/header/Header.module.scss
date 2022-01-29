@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
 .header {
     height: 100px;
 
@@ -8,7 +10,7 @@
 
     .nav {
         display: grid;
-        grid: 100px / 60% auto auto auto;
+        grid: 100px / 60% auto;
         align-items: center;
         padding: 0 2rem;
 
@@ -16,33 +18,38 @@
             grid: auto auto auto auto /auto;
         }
 
-        h1 {
-            letter-spacing: .1px;
+        .logo {
             font-size: 2rem;
-
-            sub {
-                font-size: .7rem;
-            }
-
-        }
-
-        button {
-            background: none;
-            border: none;
-            font-size: 1rem;
-            padding: .5rem 0;
-            text-transform: capitalize;
-            font-weight: 600;
-            color: rgb(128, 128, 128);
-            border: 1px rgba(128, 128, 128, 0.253) solid;
-            font-family: 'Quicksand', sans-serif !important;
+            font-family: 'Abril Fatface', cursive !important;
 
             @media screen and (max-width : 700px) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .buttonWrapper {
+            display: grid;
+            grid: auto / auto auto auto;
+
+            button {
                 background: none;
-                color: black;
-                margin-top: 1rem;
                 border: none;
-                justify-self: flex-end;
+                font-size: 1rem;
+                padding: .5rem 0;
+                text-transform: capitalize;
+                font-weight: 600;
+                color: rgb(128, 128, 128);
+                border: 1px rgba(128, 128, 128, 0.253) solid;
+                font-family: 'Quicksand', sans-serif !important;
+
+                @media screen and (max-width : 700px) {
+                    background: none;
+                    color: black;
+                    margin-top: 1rem;
+                    border: none;
+                }
             }
         }
     }

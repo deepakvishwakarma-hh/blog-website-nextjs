@@ -3,7 +3,7 @@ import db from "../../firebase.config"
 import cls from "../../styles/blog.module.scss"
 import { collection, getDocs } from "firebase/firestore"
 import MiniBlog from "../../components/mini-blog/MiniBlog"
-
+import Link from 'next/link'
 export default function blogComp({ data, author }) {
     const blog = data[0]
     const authorData = author
@@ -15,15 +15,16 @@ export default function blogComp({ data, author }) {
                 <meta name="discription" discription={blog.discription} />
             </Head>
             <header className={cls.header}>
-                <h5 className={cls.date}>{new Date(blog.id).toLocaleString()}</h5>
+                <h5 className={cls.author}> @{blog.author}</h5>
                 <h1 className={cls.title}> {blog.title}</h1>
+                <h5 className={cls.date}>{new Date(blog.id).toLocaleString()}</h5>
                 <h3 className={cls.discription}>{blog.discription}</h3>
             </header>
             <main className={cls.main}>
                 <p>{blog.content}</p>
             </main>
             <footer className={cls.footer}>
-                <h3>author : {blog.author}</h3>
+                <h3>Author Blogs</h3>
                 <section className={cls.authorBlogs}>
                     {authorData.map((v, i) => {
                         return (
@@ -31,6 +32,9 @@ export default function blogComp({ data, author }) {
                         )
                     })}
                 </section>
+                <Link href='/'>
+                    <div className={cls.reference}> Blogo <small>deployed on vercel</small> </div>
+                </Link>
             </footer>
         </>
     );

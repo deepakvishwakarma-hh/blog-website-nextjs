@@ -8,31 +8,42 @@ import classes from '../styles/Register.module.scss'
 import DemoButton from "../components/configure-demo/ConfigutreDemoLogin"
 
 export default function Login() {
+    // setting up router hook
     const router = useRouter();
+
+    // get data from database
     const userCollectionRef = collection(db, 'user');
+    // component states
     const [isLoading, setLoading] = useState(false);
     const [currUser, setUser] = useState({
         email: '',
         password: ''
     })
+    // change handler - update user credentials
     const changeHandler = (e) => { setUser({ ...currUser, [e.target.name]: e.target.value }) }
+
+    // validate user credentials with presented data and login
     const validateUser = (database) => {
+        // filter user with database 
         const isUserPresent = database.filter(user => user.email === currUser.email && user.password === currUser.password);
+        // if user found
         if (isUserPresent.length > 0) {
+            //set token
             ls.set('token', {
                 name: isUserPresent[0].name,
                 email: isUserPresent[0].email,
             }, { encrypt: true });
 
+            //remove complement token
             ls.remove('DemoLogin')
+            //push to logged in blogo
             setTimeout(() => {
                 router.push('/');
             }, 200)
-        } else {
-            alert('No login Founds')
-            setTimeout(() => {
-                router.push('/register');
-            }, 1000)
+        }
+        // if user not found
+        else {
+            alert('No login Founds try again')
         }
     }
 
