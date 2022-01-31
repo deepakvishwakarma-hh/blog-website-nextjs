@@ -64,7 +64,9 @@ export default function Register({ database }) {
 
 
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+    const { res } = context;
+    res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)
     const userCollectionRef = collection(db, 'user')
     const data = await getDocs(userCollectionRef);
     const purifiedData = data.docs.map(doc => doc.data())

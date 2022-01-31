@@ -41,10 +41,8 @@ export default function blogComp({ data, author }) {
 }
 
 export async function getServerSideProps(context) {
-    // experimental behavior
     const { query, res } = context;
     res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)
-    // e b
     const userCollectionRef = collection(db, 'user-blogs')
     const data = await getDocs(userCollectionRef);
     const purifiedData = data.docs.map(doc => doc.data())
