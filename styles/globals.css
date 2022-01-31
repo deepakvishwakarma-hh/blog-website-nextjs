@@ -12,7 +12,7 @@ a {
   margin: 0;
   padding: 0;
   font-family: 'Raleway', sans-serif !important;
-  transition: all 1s;
+  /* transition: all 1s; */
 }
 
 ::selection {
