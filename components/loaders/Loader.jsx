@@ -1,3 +1,4 @@
+
 import classes from "./Loader.module.scss"
 export default function loader() {
     return (
@@ -8,11 +9,10 @@ export default function loader() {
     )
 }
 
-export const ComponentLoader = () => {
-    return (
-        <div className={classes.loader2}>
-            <div className={classes.circle2}>
-            </div>
+export const ComponentLoader = ({ state }) => {
+    const JSX = <div className={classes.loader2}>
+        <div className={classes.circle2}>
         </div>
-    )
+    </div>
+    return (state) ? JSX : null
 }

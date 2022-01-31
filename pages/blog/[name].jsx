@@ -1,12 +1,15 @@
 import Head from "next/head";
+import Link from 'next/link'
 import db from "../../firebase.config"
 import cls from "../../styles/blog.module.scss"
 import { collection, getDocs } from "firebase/firestore"
 import MiniBlog from "../../components/mini-blog/MiniBlog"
-import Link from 'next/link'
-export default function blogComp({ data, author }) {
-    const blog = data[0]
-    const authorData = author
+import { motion } from 'framer-motion'
+export default function blogComp({ blog, author }) {
+    const forRender = author.filter(v => v.id !== blog.id)
+    const authorBlogMapper = forRender.map((v, i) => {
+        return <MiniBlog key={v + i} obj={v} />
+    })
     return (
         <>
             <Head>
@@ -14,28 +17,33 @@ export default function blogComp({ data, author }) {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta name="discription" discription={blog.discription} />
             </Head>
-            <header className={cls.header}>
-                <h5 className={cls.author}> @{blog.author}</h5>
-                <h1 className={cls.title}> {blog.title}</h1>
-                <h5 className={cls.date}>{new Date(blog.id).toLocaleString()}</h5>
-                <h3 className={cls.discription}>{blog.discription}</h3>
-            </header>
-            <main className={cls.main}>
-                <p>{blog.content}</p>
-            </main>
-            <footer className={cls.footer}>
-                <h3>Author Blogs</h3>
-                <section className={cls.authorBlogs}>
-                    {authorData.map((v, i) => {
-                        return (
-                            <MiniBlog key={v + i} obj={v} />
-                        )
-                    })}
-                </section>
-                <Link href='/'>
-                    <div className={cls.reference}> Blogo <small>deployed on vercel</small> </div>
-                </Link>
-            </footer>
+            <motion.div
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+            >
+                <header className={cls.header}>
+                    <h5 className={cls.author}> @{blog.author}</h5>
+                    <h1 className={cls.title}> {blog.title}</h1>
+                    <h5 className={cls.date}>{new Date(blog.id).toLocaleString()}</h5>
+                    <h3 className={cls.discription}>{blog.discription}</h3>
+                </header>
+                <main className={cls.main}>
+                    <p>{blog.content}</p>
+                </main>
+                <footer className={cls.footer}>
+                    <h3>Author Blogs</h3>
+                    <section className={cls.authorBlogs}>
+                        {authorBlogMapper}
+                    </section>
+                    <Link href='/'>
+                        <div className={cls.reference}> Blogo <small>deployed on vercel</small> </div>
+                    </Link>
+                </footer>
+            </motion.div>
         </>
     );
 }
@@ -48,15 +56,10 @@ export async function getServerSideProps(context) {
     const purifiedData = data.docs.map(doc => doc.data())
     const result = purifiedData.filter(v => query.name == v.id)
     const author = purifiedData.filter(v => result[0].author == v.author)
-    if (!data) {
-        return {
-            fallback: true,
-        }
-    }
     return (
         {
             props: {
-                data: result,
+                blog: result[0],
                 author: author
             }
         }

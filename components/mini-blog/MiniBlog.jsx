@@ -5,6 +5,7 @@ import { ComponentLoader } from "../loaders/Loader";
 export default function MiniBlog({ obj }) {
     // setting router hook
     const router = useRouter()
+
     // component state - loader
     const [loader, setLoader] = useState(false)
 
@@ -21,7 +22,7 @@ export default function MiniBlog({ obj }) {
         style={{ background: (loader) ? "rgba(0, 0, 0, 0.1000)" : 'white' }}
         className={cls.wrapper}
         onClick={onClickHandler}>
-        {loader && <ComponentLoader />}
+        <ComponentLoader state={loader} />
         <div>
             <small>@{obj.author}</small>
             <h1>{obj.title}</h1>
