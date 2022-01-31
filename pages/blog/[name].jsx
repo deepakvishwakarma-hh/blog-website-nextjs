@@ -13,9 +13,10 @@ export default function blogComp({ blog, author }) {
     return (
         <>
             <Head>
-                <title>{blog.title}</title>
+                <title>blogo - {blog.title}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta name="discription" discription={blog.discription} />
+
             </Head>
             <motion.div
                 initial={{

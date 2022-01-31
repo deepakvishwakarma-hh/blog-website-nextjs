@@ -5,7 +5,6 @@ import { ComponentLoader } from "../loaders/Loader";
 export default function MiniBlog({ obj }) {
     // setting router hook
     const router = useRouter()
-
     // component state - loader
     const [loader, setLoader] = useState(false)
 
