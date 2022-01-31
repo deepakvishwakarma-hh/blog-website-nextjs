@@ -31,3 +31,33 @@
         transform: rotate(360deg);
     }
 }
+
+.loader2 {
+    z-index: 99999;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .circle2 {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: #ffffff00;
+        border-radius: 1rem;
+        border: transparent 1px solid;
+        border-top: 2px solid #000000;
+        border-radius: 50%;
+        animation: circular2 .5s infinite;
+    }
+}
+
+@keyframes circular2 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

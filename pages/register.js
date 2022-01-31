@@ -63,7 +63,6 @@ export default function Register({ database }) {
 }
 
 
-
 export async function getServerSideProps(context) {
     const { res } = context;
     res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)

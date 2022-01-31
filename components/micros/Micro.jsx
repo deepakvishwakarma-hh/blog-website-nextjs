@@ -2,6 +2,7 @@ import React from 'react';
 import cls from './macro.module.scss'
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 export default function Micro() {
     return <div> null </div>;
 }
@@ -42,3 +43,4 @@ export const DemoAlert = () => {
         </>
     )
 }
+

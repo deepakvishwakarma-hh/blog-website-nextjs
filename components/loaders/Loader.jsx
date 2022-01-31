@@ -7,3 +7,12 @@ export default function loader() {
         </div>
     )
 }
+
+export const ComponentLoader = () => {
+    return (
+        <div className={classes.loader2}>
+            <div className={classes.circle2}>
+            </div>
+        </div>
+    )
+}
