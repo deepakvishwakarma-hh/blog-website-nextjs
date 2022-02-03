@@ -8,7 +8,7 @@ const Main = dynamic(() => import('../components/main/Main'))
 export default function Home({ data }) {
   // setting up validate hook
   const validateUser = Validate()
-
+  console.log(process.env)
 
 
   return (

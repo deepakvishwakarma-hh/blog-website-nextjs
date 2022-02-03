@@ -43,7 +43,6 @@ export default function Creator() {
                 [name]: value?.toLowerCase()
             }
         })
-        console.log(inputData)
     }
 
     // specially design to prevent blog-creation condition not loged in
