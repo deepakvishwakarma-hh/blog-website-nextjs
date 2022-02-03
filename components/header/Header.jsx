@@ -1,8 +1,9 @@
-import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import classes from "./Header.module.scss"
 import Aleart from "../primary-login-alert/Aleart"
-import { onLog } from 'firebase/app'
+import Image from "next/image"
+import Xs from './Xs'
 export default function Header() {
     // setting router hook
     const router = useRouter()
@@ -11,26 +12,31 @@ export default function Header() {
         {
             text: 'collection',
             path: '/',
+            svg: "/grid.svg"
         },
         {
             text: 'my account',
             path: '/account',
+            svg: "/person-circle.svg"
         },
         {
             text: 'create blog',
             path: '/create',
+            svg: "/pencil-square.svg"
         }
     ]
     // Button Mapper for mapping ButtonsOverview
     const ButtonMapper = buttonsOverview.map((value, index) => {
         // color decision like : active class
-        const color = (router.pathname == value.path) ? 'lightgrey' : null;
+        const color = (router.pathname == value.path) ? 'lightblue' : null;
         // for styling
-        const styleObject = { color: color }
+        const styleObject = { background: color }
         // map and return to wrapper
         return (
-            <Link key={index} href={value.path}>
-                <button style={styleObject} >{value.text} </button>
+            <Link key={index} href={value.path} passHref>
+                <button style={styleObject} >
+                    <Image src={value.svg} width="20" height="20" alt='icons' />
+                </button>
             </Link>
         )
     })
@@ -48,6 +54,7 @@ export default function Header() {
                     </div>
                 </nav>
             </header >
+            <Xs map={ButtonMapper} />
         </>
 
     )

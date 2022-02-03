@@ -10,11 +10,13 @@ import Loader from "../components/loaders/Loader"
 import classes from '../styles/Register.module.scss'
 import DemoButton from "../components/configure-demo/ConfigutreDemoLogin"
 export default function Register({ database }) {
+
+    console.log(process.env.REACT_APPAPI_KEY)
     const router = useRouter()
     const [user, setUser] = useState({
-        name: '',
-        email: '',
-        password: '',
+        name: undefined,
+        email: undefined,
+        password: undefined,
     });
     const [isLoading, setLoading] = useState(false);
 
@@ -23,6 +25,8 @@ export default function Register({ database }) {
     const onChangeinputHandler = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
     }
+
+
 
     const createUser = async () => {
         setLoading(!isLoading);

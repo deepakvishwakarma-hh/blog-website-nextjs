@@ -10,6 +10,15 @@ export default function blogComp({ blog, author }) {
     const authorBlogMapper = forRender.map((v, i) => {
         return <MiniBlog key={v + i} obj={v} />
     })
+    const authorBlogs = (forRender[0] == undefined) ?
+        null :
+        <>
+            <h3>Author Blogs</h3>
+            <section className={cls.authorBlogs}>
+                {authorBlogMapper}
+            </section>
+        </>
+
     return (
         <>
             <Head>
@@ -36,11 +45,8 @@ export default function blogComp({ blog, author }) {
                     <p>{blog.content}</p>
                 </main>
                 <footer className={cls.footer}>
-                    <h3>Author Blogs</h3>
-                    <section className={cls.authorBlogs}>
-                        {authorBlogMapper}
-                    </section>
-                    <Link href='/'>
+                    {authorBlogs}
+                    <Link href='/' passHref>
                         <div className={cls.reference}> Blogo <small>deployed on vercel</small> </div>
                     </Link>
                 </footer>

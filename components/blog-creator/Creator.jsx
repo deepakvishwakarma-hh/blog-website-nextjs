@@ -12,7 +12,7 @@ export default function Creator() {
     // defining collection 
     const userCollectionRef = collection(db, 'user-blogs')
     // component personal state
-    const initialValue = { title: undefined, discription: undefined, content: undefined, }
+    const initialValue = { title: 'my first blog', discription: ' feeling exiting while writing', content: ' i love blogo and its community' }
     const [inputData, updateInputData] = useState(initialValue)
     // for loading 
     const [isLoading, setLoading] = useState(false)
@@ -60,18 +60,18 @@ export default function Creator() {
                     <label className={cls.label}>
                         <h1>Title</h1>
                         <small>Title must be small and attractive and maximum 5 letter long.</small>
-                        <input name="title" onChange={OnChangeHandler} placeholder="Your blog title" type="text" required />
+                        <input name="title" onChange={OnChangeHandler} placeholder="Your blog title" type="text" value={inputData.title} required />
                     </label>
                     <label className={cls.label}>
                         <h1>Discription</h1>
                         <small>Discription is a small summary of your entire blog.It must be 30+ letter long</small>
-                        <input name="discription" onChange={OnChangeHandler} placeholder="Your blog Discription" type="text" required />
+                        <input name="discription" onChange={OnChangeHandler} placeholder="Your blog Discription" type="text" value={inputData.discription} required />
                     </label>
 
                     <label className={cls.label}>
                         <h1>Content</h1>
                         <small>Your blog content</small>
-                        <textarea name="content" onChange={OnChangeHandler} required></textarea>
+                        <textarea name="content" onChange={OnChangeHandler} value={inputData.content} required></textarea>
                     </label>
 
                 </div>
