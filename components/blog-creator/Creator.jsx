@@ -9,13 +9,17 @@ import { collection, addDoc, } from "firebase/firestore";
 export default function Creator() {
     // setting router hook
     const router = useRouter()
+
     // defining collection 
     const userCollectionRef = collection(db, 'user-blogs')
+
     // component personal state
     const initialValue = { title: 'my first blog', discription: ' feeling exiting while writing', content: ' i love blogo and its community' }
     const [inputData, updateInputData] = useState(initialValue)
+
     // for loading 
     const [isLoading, setLoading] = useState(false)
+
     // function : validate user inputs and store to database with some user credentials from local storage
     const validateInputs = async () => {
         const { title, discription, content } = inputData
@@ -34,6 +38,7 @@ export default function Creator() {
             })
         }
     }
+
     // update state on change
     const OnChangeHandler = (e) => {
         const { name, value } = e.target;
