@@ -27,6 +27,14 @@ export default function Main({ data }) {
         <main className={classes.main}>
             <aside className={classes.aside}>
                 <Search onChange={onChangeHandlerForSearch} />
+                <div className={classes.welcome}>
+                    <h1>create blog🚀
+                        <p>A Little space to be creative</p>
+                    </h1>
+                    <div className={classes.wrapper}>
+                        Create
+                    </div>
+                </div>
             </aside>
             <div className={classes.content}>
                 {search ? findInBlogs : blogMapper}
