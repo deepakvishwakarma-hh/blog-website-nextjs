@@ -2,8 +2,9 @@ import { useState } from 'react'
 import Search from './search/Search'
 import classes from "./Main.module.scss"
 import MiniBlog from '../mini-blog/MiniBlog'
-
+import { useRouter } from 'next/router'
 export default function Main({ data }) {
+    const router = useRouter()
     // component state
     const [search, updateSearch] = useState(false);
 
@@ -31,7 +32,7 @@ export default function Main({ data }) {
                     <h1>create blog🚀
                         <p>A Little space to be creative</p>
                     </h1>
-                    <div className={classes.wrapper}>
+                    <div onClick={() => { router.push("/create") }} className={classes.wrapper}>
                         Create
                     </div>
                 </div>

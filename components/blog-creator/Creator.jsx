@@ -9,7 +9,6 @@ import { collection, addDoc, } from "firebase/firestore";
 export default function Creator() {
     // setting router hook
     const router = useRouter()
-    console.log(router)
 
     // defining collection 
     const userCollectionRef = collection(db, 'user-blogs')
